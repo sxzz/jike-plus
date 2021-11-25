@@ -1,13 +1,15 @@
 import { dirname, relative } from 'path'
-import { defineConfig, UserConfig } from 'vite'
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import WindiCSS from 'vite-plugin-windicss'
 import windiConfig from './windi.config'
 import { r, port, isDev } from './scripts/utils'
+import type { UserConfig } from 'vite'
 
 export const sharedConfig: UserConfig = {
   root: r('src'),
@@ -26,9 +28,7 @@ export const sharedConfig: UserConfig = {
       imports: [
         'vue',
         {
-          'webextension-polyfill': [
-            ['default', 'browser'],
-          ],
+          'webextension-polyfill': [['*', 'browser']],
         },
       ],
       dts: r('src/auto-imports.d.ts'),
@@ -41,6 +41,7 @@ export const sharedConfig: UserConfig = {
       dts: true,
       resolvers: [
         // auto import icons
+        ElementPlusResolver(),
         IconsResolver({
           componentPrefix: '',
         }),
@@ -56,19 +57,16 @@ export const sharedConfig: UserConfig = {
       enforce: 'post',
       apply: 'build',
       transformIndexHtml(html, { path }) {
-        return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`)
+        return html.replace(
+          /"\/assets\//g,
+          `"${relative(dirname(path), '/assets')}/`
+        )
       },
     },
   ],
   optimizeDeps: {
-    include: [
-      'vue',
-      '@vueuse/core',
-      'webextension-polyfill',
-    ],
-    exclude: [
-      'vue-demi',
-    ],
+    include: ['vue', '@vueuse/core', 'webextension-polyfill'],
+    exclude: ['vue-demi'],
   },
 }
 
@@ -92,8 +90,6 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         background: r('src/background/index.html'),
-        options: r('src/options/index.html'),
-        popup: r('src/popup/index.html'),
       },
     },
   },

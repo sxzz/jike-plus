@@ -1,10 +1,10 @@
 import fs from 'fs-extra'
+import { isDev, port, r } from '../scripts/utils'
 import type { Manifest } from 'webextension-polyfill'
 import type PkgType from '../package.json'
-import { isDev, port, r } from '../scripts/utils'
 
 export async function getManifest() {
-  const pkg = await fs.readJSON(r('package.json')) as typeof PkgType
+  const pkg = (await fs.readJSON(r('package.json'))) as typeof PkgType
 
   // update this file to update this manifest.json
   // can also be conditional based on your need
@@ -13,15 +13,6 @@ export async function getManifest() {
     name: pkg.displayName || pkg.name,
     version: pkg.version,
     description: pkg.description,
-    browser_action: {
-      default_icon: './assets/icon-512.png',
-      default_popup: './dist/popup/index.html',
-    },
-    options_ui: {
-      page: './dist/options/index.html',
-      open_in_tab: true,
-      chrome_style: false,
-    },
     background: {
       page: './dist/background/index.html',
       persistent: false,
@@ -35,16 +26,16 @@ export async function getManifest() {
       'tabs',
       'storage',
       'activeTab',
-      'http://*/',
-      'https://*/',
+      'https://*.okjike.com/',
+      'https://*.ruguoapp.com/',
     ],
-    content_scripts: [{
-      matches: ['http://*/*', 'https://*/*'],
-      js: ['./dist/contentScripts/index.global.js'],
-    }],
-    web_accessible_resources: [
-      'dist/contentScripts/style.css',
+    content_scripts: [
+      {
+        matches: ['https://*.okjike.com/'],
+        js: ['./dist/contentScripts/index.global.js'],
+      },
     ],
+    web_accessible_resources: ['dist/contentScripts/style.css'],
   }
 
   if (isDev) {
@@ -55,7 +46,7 @@ export async function getManifest() {
     manifest.permissions?.push('webNavigation')
 
     // this is required on dev for Vite script to load
-    manifest.content_security_policy = `script-src \'self\' http://localhost:${port}; object-src \'self\'`
+    manifest.content_security_policy = `script-src 'self' http://localhost:${port}; object-src 'self'`
   }
 
   return manifest
