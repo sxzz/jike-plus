@@ -22,13 +22,18 @@ export const sharedConfig: UserConfig = {
     __DEV__: isDev,
   },
   plugins: [
-    Vue(),
+    Vue({
+      refTransform: `${r('src', 'contentScripts')}/**/*`,
+      script: {
+        propsDestructureTransform: true,
+      },
+    }),
 
     AutoImport({
       imports: [
         'vue',
         {
-          'webextension-polyfill': [['*', 'browser']],
+          'webextension-polyfill': [['default', 'browser']],
         },
       ],
       dts: r('src/auto-imports.d.ts'),

@@ -14,5 +14,5 @@ browser.webNavigation.onCommitted.addListener(({ tabId, frameId, url }) => {
       file: `${isFirefox ? '' : '.'}/dist/contentScripts/index.global.js`,
       runAt: 'document_end',
     })
-    .catch((error) => console.error(error))
+    .catch((error: any) => console.error(error))
 })

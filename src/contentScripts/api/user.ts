@@ -102,29 +102,6 @@ export interface RestrictedNameChange {
   limits: number
 }
 
-export interface AvatarImage2 {
-  thumbnailUrl: string
-  smallPicUrl: string
-  middlePicUrl: string
-  picUrl: string
-  format: string
-  campaignDecorationUrl: string
-}
-
-export interface StatsCount2 {
-  topicSubscribed: number
-  topicCreated: number
-  followedCount: number
-  followingCount: number
-  highlightedPersonalUpdates: number
-  liked: number
-  respectedCount: number
-}
-
-export interface BackgroundImage2 {
-  picUrl: string
-}
-
 export interface LatestVisitor {
   id: string
   username: string
@@ -134,12 +111,12 @@ export interface LatestVisitor {
   isVerified: boolean
   verifyMessage: string
   briefIntro: string
-  avatarImage: AvatarImage2
+  avatarImage: AvatarImage
   profileImageUrl: string
-  statsCount: StatsCount2
+  statsCount: StatsCount
   isBannedForever: boolean
   isSponsor: boolean
-  backgroundImage: BackgroundImage2
+  backgroundImage: BackgroundImage
   bio: string
   gender: string
   city: string

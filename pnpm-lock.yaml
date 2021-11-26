@@ -8,7 +8,7 @@ specifiers:
   '@types/cookie': ^0.4.1
   '@types/fs-extra': ^9.0.13
   '@types/node': ^16.11.10
-  '@types/webextension-polyfill': ^0.8.2
+  '@types/webextension-polyfill': 0.8.0
   '@vitejs/plugin-vue': ^1.10.0
   '@vue/compiler-sfc': ^3.2.22
   '@vueuse/core': ^7.1.1
@@ -52,7 +52,7 @@ devDependencies:
   '@types/cookie': 0.4.1
   '@types/fs-extra': 9.0.13
   '@types/node': 16.11.10
-  '@types/webextension-polyfill': 0.8.2
+  '@types/webextension-polyfill': 0.8.0
   '@vitejs/plugin-vue': 1.10.0_vite@2.6.14
   '@vue/compiler-sfc': 3.2.22
   '@vueuse/core': 7.1.1_vue@3.2.22
@@ -595,6 +595,10 @@ packages:
 
   /@types/throttle-debounce/2.1.0:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
+    dev: true
+
+  /@types/webextension-polyfill/0.8.0:
+    resolution: {integrity: sha512-usmQx2snpNkVl2VoOGZCdrPnfHL+CjuSFy84ZdTwQ2b2cvyygF/zGW5YI6Zywk+bfq9zmYpORO9lmdN7DknpRw==}
     dev: true
 
   /@types/webextension-polyfill/0.8.2:

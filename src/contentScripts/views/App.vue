@@ -17,60 +17,24 @@
         class="flex w-10 h-10 rounded-full shadow cursor-pointer bg-[#ffe411]"
         @click="handleLikeRank"
       >
-        <mdi:thumb-up-outline class="block m-auto text-black text-lg" />
+        <icon-park-outline:thumbs-up class="block m-auto text-black text-lg" />
       </div>
     </el-tooltip>
   </div>
 
-  <el-dialog v-model="visible" width="400px" center>
-    <template #title>
-      <span>
-        <mdi:thumb-up-outline class="block m-auto text-[#ffe411] inline" />
-        点赞排名
-      </span>
-    </template>
-    <el-space class="rank w-full" direction="vertical" fill>
-      <div
-        v-for="item in rank"
-        :key="item.username"
-        class="flex justify-between items-center"
-      >
-        <a
-          class="flex items-center min-w-0"
-          :href="`https://web.okjike.com/u/${item.username}`"
-          target="_blank"
-        >
-          <el-avatar
-            class="mr-2 shadow min-w-8 min-h-8"
-            :src="usersInfo[item.username].avatarImage.picUrl"
-          />
-          <span
-            class="overflow-ellipsis overflow-hidden whitespace-nowrap min-w-0"
-          >
-            {{ usersInfo[item.username].screenName }}
-          </span>
-        </a>
-        <span class="flex justify-center items-center">
-          <mdi:thumb-up-outline
-            class="block m-auto text-[#ffe411] inline mr-1"
-          />
-          {{ item.count }}
-        </span>
-      </div>
-    </el-space>
-  </el-dialog>
+  <like-rank v-model="visible" :data="rank" />
 </template>
 
 <script setup lang="ts">
 import 'virtual:windi.css'
 import { ElLoading } from 'element-plus'
 import { getLikedUsers, getPostsByUsername } from '../api/post'
-import { getProfile } from '../api/profile'
-import type { User } from '../types'
+import { getProfile } from '../api/user'
+import LikeRank from './like-rank.vue'
+import type { User } from '../api/user'
 
 const visible = ref(false)
-const rank = ref<{ username: string; count: number }[]>([])
-const usersInfo = ref<Record<string, User>>({})
+const rank = ref<{ user: User; count: number }[]>([])
 
 const handleLikeRank = async () => {
   const loading = ElLoading.service({ text: '获取中...', body: true })
@@ -82,6 +46,7 @@ const handleLikeRank = async () => {
     loading.setText(`获取到 ${posts.length} 个动态`)
 
     const likes: Record<string, number> = {}
+    const usersInfo: Record<string, User> = {}
 
     for (const [index, post] of posts.entries()) {
       loading.setText(`获取中... (${index + 1} / ${posts.length})`)
@@ -97,7 +62,7 @@ const handleLikeRank = async () => {
       if (!users) continue
 
       for (const user of users) {
-        usersInfo.value[user.username] = user
+        usersInfo[user.username] = user
         if (likes[user.username] === undefined) {
           likes[user.username] = 1
         } else {
@@ -107,10 +72,7 @@ const handleLikeRank = async () => {
     }
 
     rank.value = Object.entries(likes)
-      .map(([name, count]) => ({
-        username: name,
-        count,
-      }))
+      .map(([username, count]) => ({ user: usersInfo[username], count }))
       .sort((a, b) => b.count - a.count)
     visible.value = true
   } finally {
