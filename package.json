@@ -1,7 +1,7 @@
 {
   "name": "jike-plus",
   "displayName": "Jike Plus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extension for Jike",
   "private": true,
   "scripts": {
