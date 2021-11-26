@@ -28,7 +28,7 @@ export async function getManifest() {
         js: ['./dist/contentScripts/index.global.js'],
       },
     ],
-    web_accessible_resources: [],
+    web_accessible_resources: ['dist/contentScripts/style.css'],
   }
 
   if (isDev) {
