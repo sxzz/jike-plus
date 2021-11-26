@@ -4,7 +4,7 @@ import 'element-plus/es/components/message/style/css'
 import 'element-plus/es/components/loading/style/css'
 import App from './views/App.vue'
 ;(() => {
-  console.info('[vitesse-webext] Hello world from content script')
+  console.info('[jike-plus] Hello world from Jike Plus')
 
   // mount component to context window
   const container = document.createElement('div')

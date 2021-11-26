@@ -22,16 +22,9 @@ export async function getManifest() {
       48: './assets/icon-512.png',
       128: './assets/icon-512.png',
     },
-    permissions: [
-      'tabs',
-      'storage',
-      'activeTab',
-      'https://*.okjike.com/',
-      'https://*.ruguoapp.com/',
-    ],
     content_scripts: [
       {
-        matches: ['https://*.okjike.com/'],
+        matches: ['https://web.okjike.com/'],
         js: ['./dist/contentScripts/index.global.js'],
       },
     ],

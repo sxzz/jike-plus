@@ -2,7 +2,7 @@
   "name": "jike-plus",
   "displayName": "Jike Plus",
   "version": "0.0.1",
-  "description": "Browser Extension for Jike",
+  "description": "Extension for Jike",
   "private": true,
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
