@@ -1,8 +1,8 @@
 import axios from 'axios'
-import rateLimit from 'axios-rate-limit'
+import axiosRetry from 'axios-retry'
 import { getAccessToken } from '../utils/user'
 
-export const request = rateLimit(
+export const request = axiosRetry(
   axios.create({
     baseURL: 'https://api.ruguoapp.com/1.0/',
     headers: {
@@ -10,5 +10,9 @@ export const request = rateLimit(
     },
     responseType: 'json',
   }),
-  { maxRequests: 1, perMilliseconds: 1500 }
+  {
+    retries: 5,
+    retryDelay: () => 1500,
+    retryCondition: (err) => err.response?.status === 429,
+  }
 )

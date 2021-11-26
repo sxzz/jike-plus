@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
 import { createApp } from 'vue'
 import 'element-plus/es/components/message/style/css'
+import 'element-plus/es/components/message-box/style/css'
 import 'element-plus/es/components/loading/style/css'
-import App from './views/App.vue'
+import App from './views/app.vue'
 ;(() => {
   console.info('[jike-plus] Hello world from Jike Plus')
 
