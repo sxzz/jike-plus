@@ -10,7 +10,7 @@ export async function getManifest() {
   // can also be conditional based on your need
   const manifest: Manifest.WebExtensionManifest = {
     manifest_version: 2,
-    name: pkg.displayName || pkg.name,
+    name: (pkg.displayName || pkg.name) + (isDev ? ' Dev' : ''),
     version: pkg.version,
     description: pkg.description,
     background: {
@@ -24,10 +24,11 @@ export async function getManifest() {
     },
     content_scripts: [
       {
-        matches: ['https://web.okjike.com/'],
+        matches: ['https://web.okjike.com/*'],
         js: ['./dist/contentScripts/index.global.js'],
       },
     ],
+    permissions: [],
     web_accessible_resources: ['dist/contentScripts/style.css'],
   }
 
@@ -37,6 +38,7 @@ export async function getManifest() {
     // see src/background/contentScriptHMR.ts
     delete manifest.content_scripts
     manifest.permissions?.push('webNavigation')
+    manifest.permissions?.push('https://web.okjike.com/*')
 
     // this is required on dev for Vite script to load
     manifest.content_security_policy = `script-src 'self' http://localhost:${port}; object-src 'self'`

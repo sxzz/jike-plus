@@ -50,15 +50,17 @@ const handleLikeRank = async () => {
 
     for (const [index, post] of posts.entries()) {
       loading.setText(`获取中... (${index + 1} / ${posts.length})`)
-      const users = await getLikedUsers(post.id, 100).catch((err: any) => {
-        if (err.response.status === 400) {
-          // 请求错误
-          console.warn(post)
+      const users = await getLikedUsers(post.type, post.id, 10000).catch(
+        (err: any) => {
+          if (err.response.status === 400) {
+            // 请求错误
+            console.warn(post)
+            return null
+          }
+          console.error(err.response)
           return null
         }
-        console.error(err.response)
-        return null
-      })
+      )
       if (!users) continue
 
       for (const user of users) {

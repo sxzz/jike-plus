@@ -21,7 +21,11 @@ export const getPostsByUsername = async (username: string, limit: number) => {
   return posts
 }
 
-export const getLikedUsers = async (id: string, limit: number) => {
+export const getLikedUsers = async (
+  type: PostType,
+  id: string,
+  limit: number
+) => {
   const users: User[] = []
   let loadMoreKey: string | undefined = undefined
   do {
@@ -31,7 +35,9 @@ export const getLikedUsers = async (id: string, limit: number) => {
     }
     if (loadMoreKey) data.loadMoreKey = loadMoreKey
     const { data: resp } = await request.post<LikedUsersResponse>(
-      'originalPosts/listLikedUsers',
+      `${
+        type === 'ORIGINAL_POST' ? 'originalPosts' : 'reposts'
+      }/listLikedUsers`,
       data
     )
     loadMoreKey = resp.loadMoreKey
@@ -40,10 +46,11 @@ export const getLikedUsers = async (id: string, limit: number) => {
   return users
 }
 
+export type PostType = 'ORIGINAL_POST' | 'REPOST'
 export interface Post {
   actionTime: string
   id: string
-  type: string
+  type: PostType
   content: string
   urlsInText: string[]
   status: string
