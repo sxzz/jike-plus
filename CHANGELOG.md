@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/sxzz/jike-plus/compare/v0.0.3...v0.0.4) (2021-11-27)
+
+
+### Bug Fixes
+
+* tsconfig types path ([d5a49d0](https://github.com/sxzz/jike-plus/commit/d5a49d0ee4d2cc230a60cd89a35e4c7f79b3a408))
+
 ### [0.0.3](https://github.com/sxzz/jike-plus/compare/v0.0.2...v0.0.3) (2021-11-27)
 
 
