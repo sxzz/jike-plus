@@ -14,7 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "types": [
       "vite/client",
-      "element-plus/global",
+      "./node_modules/element-plus/global",
       "./node_modules/vue/ref-macros"
     ],
     "paths": {
