@@ -2,13 +2,13 @@ lockfileVersion: 5.3
 
 specifiers:
   '@ffflorian/jszip-cli': ^3.1.6
-  '@iconify/json': ^1.1.434
+  '@iconify/json': ^1.1.435
   '@sxzz/eslint-config-prettier': ^1.6.1
   '@sxzz/eslint-config-vue': ^1.6.3
   '@types/cookie': ^0.4.1
   '@types/fs-extra': ^9.0.13
   '@types/node': ^16.11.10
-  '@types/webextension-polyfill': 0.8.0
+  '@types/webextension-polyfill': 0.8.2
   '@vitejs/plugin-vue': ^1.10.1
   '@vue/compiler-sfc': ^3.2.23
   '@vueuse/core': ^7.1.2
@@ -18,7 +18,7 @@ specifiers:
   cookie: ^0.4.1
   cross-env: ^7.0.3
   crx: ^5.0.1
-  element-plus: ^1.2.0-beta.3
+  element-plus: 1.2.0-beta.3
   eslint: ^8.3.0
   eslint-define-config: ^1.2.0
   esno: ^0.12.1
@@ -28,11 +28,11 @@ specifiers:
   rimraf: ^3.0.2
   standard-version: ^9.3.2
   typescript: ^4.5.2
-  unplugin-auto-import: ^0.4.19
+  unplugin-auto-import: ^0.5.1
   unplugin-icons: ^0.12.20
   unplugin-vue-components: ^0.17.2
   vite: ^2.6.14
-  vite-plugin-windicss: ^1.5.1
+  vite-plugin-windicss: ^1.5.3
   vue: ^3.2.23
   vue-demi: ^0.12.1
   web-ext: ^6.6.0
@@ -47,13 +47,13 @@ dependencies:
 
 devDependencies:
   '@ffflorian/jszip-cli': 3.1.6
-  '@iconify/json': 1.1.434
+  '@iconify/json': 1.1.435
   '@sxzz/eslint-config-prettier': 1.6.1_eslint@8.3.0
   '@sxzz/eslint-config-vue': 1.6.3_eslint@8.3.0+typescript@4.5.2
   '@types/cookie': 0.4.1
   '@types/fs-extra': 9.0.13
   '@types/node': 16.11.10
-  '@types/webextension-polyfill': 0.8.0
+  '@types/webextension-polyfill': 0.8.2
   '@vitejs/plugin-vue': 1.10.1_vite@2.6.14
   '@vue/compiler-sfc': 3.2.23
   '@vueuse/core': 7.1.2_vue@3.2.23
@@ -69,11 +69,11 @@ devDependencies:
   rimraf: 3.0.2
   standard-version: 9.3.2
   typescript: 4.5.2
-  unplugin-auto-import: 0.4.19_@vueuse+core@7.1.2+vite@2.6.14
+  unplugin-auto-import: 0.5.1_@vueuse+core@7.1.2+vite@2.6.14
   unplugin-icons: 0.12.20_9417d93c2d611a99e242fff8baf59806
   unplugin-vue-components: 0.17.2_vite@2.6.14+vue@3.2.23
   vite: 2.6.14
-  vite-plugin-windicss: 1.5.1_vite@2.6.14
+  vite-plugin-windicss: 1.5.3_vite@2.6.14
   vue: 3.2.23
   vue-demi: 0.12.1_vue@3.2.23
   web-ext: 6.6.0
@@ -121,7 +121,7 @@ packages:
       '@babel/traverse': 7.16.3
       '@babel/types': 7.16.0
       convert-source-map: 1.8.0
-      debug: 4.3.2
+      debug: 4.3.3
       gensync: 1.0.0-beta.2
       json5: 2.2.0
       semver: 6.3.0
@@ -321,7 +321,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.16.0
       '@babel/parser': 7.16.4
       '@babel/types': 7.16.0
-      debug: 4.3.2
+      debug: 4.3.3
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -370,7 +370,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.2
+      debug: 4.3.3
       espree: 9.1.0
       globals: 13.12.0
       ignore: 4.0.6
@@ -400,7 +400,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
-      debug: 4.3.2
+      debug: 4.3.3
       minimatch: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -415,8 +415,8 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@iconify/json/1.1.434:
-    resolution: {integrity: sha512-GfVRF5QwPQ7IGVgWbD3bqLu/4NSBiNKJbm7yuhDj5q9gkxUuapWLhkcq3EiMRGfGshO3MP+i7r0S5llzXUlPCw==}
+  /@iconify/json/1.1.435:
+    resolution: {integrity: sha512-ih5tnLNBu+mLVQSKkwhawZSdYhJ84zOSGw2gAojJZcypFmb5aQTzshSx4Lp4r5esz9vq3VORqXZF0EVHRFw5XQ==}
     dev: true
 
   /@iconify/types/1.0.12:
@@ -454,8 +454,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@popperjs/core/2.10.2:
-    resolution: {integrity: sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ==}
+  /@popperjs/core/2.11.0:
+    resolution: {integrity: sha512-zrsUxjLOKAzdewIDRWy9nsV1GQsKBCWaGwsZQlCgr6/q+vjyZhFgqedLfFBuI9anTPEUT4APq9Mu0SZBTzIcGQ==}
     dev: false
 
   /@rollup/pluginutils/4.1.1:
@@ -581,8 +581,8 @@ packages:
     resolution: {integrity: sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==}
     dev: true
 
-  /@types/webextension-polyfill/0.8.0:
-    resolution: {integrity: sha512-usmQx2snpNkVl2VoOGZCdrPnfHL+CjuSFy84ZdTwQ2b2cvyygF/zGW5YI6Zywk+bfq9zmYpORO9lmdN7DknpRw==}
+  /@types/webextension-polyfill/0.8.2:
+    resolution: {integrity: sha512-Pd+p5AQx6s78jr4gDC2p3vbw+uxP2DLLqE9iAJJpZ+OUqDm3txr6uN2wUBEwjVgZTNdBHPsxawGvPCTipF2s6w==}
     dev: true
 
   /@types/yauzl/2.9.2:
@@ -605,7 +605,7 @@ packages:
       '@typescript-eslint/experimental-utils': 5.4.0_eslint@8.3.0+typescript@4.5.2
       '@typescript-eslint/parser': 5.4.0_eslint@8.3.0+typescript@4.5.2
       '@typescript-eslint/scope-manager': 5.4.0
-      debug: 4.3.2
+      debug: 4.3.3
       eslint: 8.3.0
       functional-red-black-tree: 1.0.1
       ignore: 5.1.9
@@ -648,7 +648,7 @@ packages:
       '@typescript-eslint/scope-manager': 5.4.0
       '@typescript-eslint/types': 5.4.0
       '@typescript-eslint/typescript-estree': 5.4.0_typescript@4.5.2
-      debug: 4.3.2
+      debug: 4.3.3
       eslint: 8.3.0
       typescript: 4.5.2
     transitivePeerDependencies:
@@ -679,7 +679,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.4.0
       '@typescript-eslint/visitor-keys': 5.4.0
-      debug: 4.3.2
+      debug: 4.3.3
       globby: 11.0.4
       is-glob: 4.0.3
       semver: 7.3.5
@@ -733,7 +733,7 @@ packages:
       '@vue/shared': 3.2.23
       estree-walker: 2.0.2
       magic-string: 0.25.7
-      postcss: 8.4.3
+      postcss: 8.4.4
       source-map: 0.6.1
     dev: true
 
@@ -851,22 +851,22 @@ packages:
       vue-demi: 0.12.1_vue@3.2.23
     dev: true
 
-  /@windicss/config/1.5.1:
-    resolution: {integrity: sha512-nWNgvvJj9RcYhLcqwju/Z8FfaHRjyWHDYS3IgY7lWUM+vWTLFuKqhavKfC1589kdYjiO9JeX07Vg+YzfcxP0Yw==}
+  /@windicss/config/1.5.3:
+    resolution: {integrity: sha512-DXUR+LWOWwG+prkcvey4IV4V9BvigOcfuLP28k21fO3UkfS6G6HRRgf+STB0AgKrXIGlUDDHfoPvEbndfUlYjg==}
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       jiti: 1.12.9
       windicss: 3.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@windicss/plugin-utils/1.5.1:
-    resolution: {integrity: sha512-gxJiTCMKv1p1x4W2BLG2yfNe+DfIVPc8+aKvfCUCtOpdg5GB5yzhuAC4ROsKiXHxu4QXoojrh7jXH6ELlrELpQ==}
+  /@windicss/plugin-utils/1.5.3:
+    resolution: {integrity: sha512-6C6R/wB2vzaiWn1Tv95FaK5/932UnnbObwitusyDcuCDmCM97aCCB93CYLZCtQtPdPlLYODezinPFhdfMm746w==}
     dependencies:
       '@antfu/utils': 0.3.0
-      '@windicss/config': 1.5.1
-      debug: 4.3.2
+      '@windicss/config': 1.5.3
+      debug: 4.3.3
       fast-glob: 3.2.7
       magic-string: 0.25.7
       micromatch: 4.0.4
@@ -1895,8 +1895,8 @@ packages:
       ms: 2.1.3
     dev: true
 
-  /debug/4.3.2:
-    resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
+  /debug/4.3.3:
+    resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -2103,7 +2103,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@element-plus/icons': 0.0.11
-      '@popperjs/core': 2.10.2
+      '@popperjs/core': 2.11.0
       '@vueuse/core': 6.9.2_vue@3.2.23
       async-validator: 4.0.7
       dayjs: 1.10.7
@@ -2530,7 +2530,7 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       eslint: 8.3.0
       lodash: 4.17.21
       natural-compare: 1.4.0
@@ -2620,7 +2620,7 @@ packages:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.2
+      debug: 4.3.3
       doctrine: 3.0.0
       enquirer: 2.3.6
       escape-string-regexp: 4.0.0
@@ -4659,7 +4659,7 @@ packages:
       pino-std-serializers: 4.0.0
       quick-format-unescaped: 4.0.4
       real-require: 0.1.0
-      safe-stable-stringify: 2.2.0
+      safe-stable-stringify: 2.3.0
       sonic-boom: 2.3.1
       thread-stream: 0.13.0
     dev: true
@@ -4685,8 +4685,8 @@ packages:
       source-map-js: 0.6.2
     dev: true
 
-  /postcss/8.4.3:
-    resolution: {integrity: sha512-d5gVKo8ekrircqHOQNvSQk8dhGOuAfu1iP6dzfAlnAmcu7EBJ9cFuZG8B1KZK362aaEO3L1H+WM3ny9xQ29tFw==}
+  /postcss/8.4.4:
+    resolution: {integrity: sha512-joU6fBsN6EIer28Lj6GDFoC/5yOZzLCfn0zHAn/MYXI7aPt4m4hK5KC5ovEZXy+lnCjmYIbQWngvju2ddyEr8Q==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.1.30
@@ -5023,8 +5023,8 @@ packages:
       regexp-tree: 0.1.24
     dev: true
 
-  /safe-stable-stringify/2.2.0:
-    resolution: {integrity: sha512-C6AuMdYPuPV/P1leplHNu0lgc2LAElq/g3TdoksDCIVtBhr78o/CH03bt/9SKqugFbKU9CUjsNlCu0fjtQzQUw==}
+  /safe-stable-stringify/2.3.0:
+    resolution: {integrity: sha512-VFlmNrvZ44a0QnRY2yfEIUhbMh8BjTFWf2mRG/8mCEAKTfQYV8xxfn6P+00OLej0gznC5C+hfgcEF7AGrN5Stw==}
     engines: {node: '>=10'}
     dev: true
 
@@ -5643,8 +5643,8 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-auto-import/0.4.19_@vueuse+core@7.1.2+vite@2.6.14:
-    resolution: {integrity: sha512-tyDJ+I/ROP3SqPn4pbuhJ4ZtRvN3upv5eUcw6fhouLS86T4SrDFFlPAjypityCD7sxs5LfjeTbCT58JJ1HmpXg==}
+  /unplugin-auto-import/0.5.1_@vueuse+core@7.1.2+vite@2.6.14:
+    resolution: {integrity: sha512-Q3CvNbCB7nLbu+JdrF6jYs0Nx7kHmV2KzDcZHzTrdri3EhU1lUOgto+ce+Jw01Ds7RxBi9lwWwF3QoFwFPul1A==}
     engines: {node: '>=14'}
     peerDependencies:
       '@vueuse/core': '*'
@@ -5686,7 +5686,7 @@ packages:
       '@antfu/utils': 0.3.0
       '@iconify/utils': 1.0.20
       '@vue/compiler-sfc': 3.2.23
-      debug: 4.3.2
+      debug: 4.3.3
       kolorist: 1.5.0
       local-pkg: 0.4.0
       unplugin: 0.2.21_vite@2.6.14
@@ -5713,7 +5713,7 @@ packages:
       '@antfu/utils': 0.3.0
       '@rollup/pluginutils': 4.1.1
       chokidar: 3.5.2
-      debug: 4.3.2
+      debug: 4.3.3
       fast-glob: 3.2.7
       local-pkg: 0.1.0
       magic-string: 0.25.7
@@ -5819,14 +5819,14 @@ packages:
       extsprintf: 1.3.0
     dev: true
 
-  /vite-plugin-windicss/1.5.1_vite@2.6.14:
-    resolution: {integrity: sha512-AUuRFT5Y7SfW9eclaKf5BOTZ7MMfkUZzOeVzqd9yq/uIwzWyleRtssCTuJgZ0+om+hnXn9YwcIpR26lsaasIbg==}
+  /vite-plugin-windicss/1.5.3_vite@2.6.14:
+    resolution: {integrity: sha512-t9iu+fs1egguTK/+RdV/UCp11R69EQhVvvGcrNhCMt43DQF/RU19gHZUXB8wspm0V02Bz+rSmtqy/h3laJ9Z5Q==}
     peerDependencies:
       vite: ^2.0.1
     dependencies:
-      '@windicss/plugin-utils': 1.5.1
-      chalk: 4.1.2
-      debug: 4.3.2
+      '@windicss/plugin-utils': 1.5.3
+      debug: 4.3.3
+      kolorist: 1.5.0
       vite: 2.6.14
       windicss: 3.2.1
     transitivePeerDependencies:
@@ -5850,7 +5850,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.13.15
-      postcss: 8.4.3
+      postcss: 8.4.4
       resolve: 1.20.0
       rollup: 2.60.1
     optionalDependencies:
@@ -5877,7 +5877,7 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       eslint: 8.3.0
       eslint-scope: 6.0.0
       eslint-visitor-keys: 3.1.0
@@ -5962,7 +5962,7 @@ packages:
   /webext-bridge/5.0.1:
     resolution: {integrity: sha512-x1UDdey6zXT7FUL1mt+Pa1cciEAb2GlUatfJgQeDmUrFwJeSOcVWH9DQhJtTQTy6AY0zZ61lXWf6ri67YRz8ZQ==}
     dependencies:
-      '@types/webextension-polyfill': 0.8.0
+      '@types/webextension-polyfill': 0.8.2
       nanoevents: 6.0.2
       serialize-error: 8.1.0
       tiny-uid: 1.1.1
