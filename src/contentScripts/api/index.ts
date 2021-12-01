@@ -11,7 +11,7 @@ const request = axios.create({
 })
 axiosRetry(request, {
   retries: 5,
-  retryDelay: () => 1500,
+  retryDelay: () => 2000,
   retryCondition: (err) => err.response?.status === 429,
 })
 

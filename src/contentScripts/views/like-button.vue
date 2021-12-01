@@ -1,16 +1,6 @@
 <template>
   <div
-    class="
-      fixed
-      right-2
-      bottom-2
-      m-5
-      z-1000
-      flex
-      font-sans
-      select-none
-      leading-1em
-    "
+    class="fixed right-2 bottom-2 m-5 z-1000 flex font-sans select-none leading-1em"
   >
     <el-tooltip content="点赞排行榜" placement="top" :visible-arrow="false">
       <div
@@ -63,33 +53,31 @@ const handleLikeRank = async () => {
     const updateLoadingText = () =>
       loading.setText(`获取中... (${success} / ${posts.length})`)
 
-    await Promise.all(
-      posts.map(async (post) => {
-        const users = await getLikedUsers(post.type, post.id, 10000).catch(
-          (err: any) => {
-            if (err.response.status === 400) {
-              // 请求错误
-              console.warn(post)
-              return null
-            }
-            console.error(err.response)
+    for (const post of posts) {
+      const users = await getLikedUsers(post.type, post.id, 10000).catch(
+        (err: any) => {
+          if (err.response.status === 400) {
+            // 请求错误
+            console.warn(post)
             return null
           }
-        )
-        if (!users) return
-
-        for (const user of users) {
-          usersInfo[user.username] = user
-          if (likes[user.username] === undefined) {
-            likes[user.username] = 1
-          } else {
-            likes[user.username]++
-          }
+          console.error(err.response)
+          return null
         }
-        success++
-        updateLoadingText()
-      })
-    )
+      )
+      if (!users) continue
+
+      for (const user of users) {
+        usersInfo[user.username] = user
+        if (likes[user.username] === undefined) {
+          likes[user.username] = 1
+        } else {
+          likes[user.username]++
+        }
+      }
+      success++
+      updateLoadingText()
+    }
 
     rank.value = Object.entries(likes)
       .map(([username, count]) => ({ user: usersInfo[username], count }))
